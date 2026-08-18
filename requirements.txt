@@ -1,0 +1,9 @@
+# PROJECT ARGUS - Python dependencies
+# Tested on Python 3.13, Windows 11
+
+MetaTrader5>=5.0.45      # MT5 terminal bridge (Windows only)
+PyYAML>=6.0.1             # YAML configuration loading
+rich>=13.7.0               # Terminal dashboard rendering
+pandas>=2.2.0               # Candle/series data handling (Engine phase)
+numpy>=1.26.0                # Numerical computations (RSI, FVG math)
+pytest>=8.0.0                 # Testing framework

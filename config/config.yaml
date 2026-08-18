@@ -1,0 +1,53 @@
+# =============================================================================
+# PROJECT ARGUS - Configuration File
+# Adaptive Real-time Gold Understanding System
+# =============================================================================
+
+app:
+  name: "PROJECT ARGUS"
+  version: "0.1.0"
+  environment: "development"   # development | demo | live
+
+mt5:
+  account: 00000000            # Your MT5 account number
+  password: "CHANGE_ME"        # Your MT5 account password
+  server: "YourBroker-Demo"    # Broker server name, e.g. "ICMarketsSC-Demo"
+  path: ""                     # Optional: full path to terminal64.exe (blank = auto-detect)
+  symbol: "XAUUSD"
+  timeframe_entry: "M3"        # Entry timeframe
+  timeframe_structure: "M15"   # Market structure timeframe
+  lot: 0.01
+  spread_limit_points: 350     # Max allowed spread (in points) before trading is paused
+  magic_number: 20260817
+
+risk:
+  fixed_loss_per_trade: 5.0    # Fixed floating loss (in account currency) used to derive SL
+  reward_to_risk: 2.0          # Take profit expressed as a multiple of risk (1:2 default)
+  max_daily_loss: 50.0         # Guardian kill-switch threshold (account currency)
+  max_open_positions: 1
+
+strategy:
+  rsi_period: 14
+  rsi_overbought: 75
+  rsi_oversold: 25
+
+filters:
+  news_filter_enabled: true
+  news_blackout_minutes_before: 15
+  news_blackout_minutes_after: 15
+
+scanner:
+  interval_seconds: 5
+  enabled: true
+
+logging:
+  level: "INFO"                # DEBUG | INFO | WARNING | ERROR
+  directory: "logs"
+
+journal:
+  directory: "journal_data"
+  format: "csv"                # csv | json
+
+dashboard:
+  refresh_seconds: 1
+  theme: "dark"
